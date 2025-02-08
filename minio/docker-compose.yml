@@ -2,7 +2,7 @@ version: '3'
 
 services:
   minio:
-    image: chainguard/minio:0-dev
+    image: minio/minio:latest
     ports:
       - '9000:9000'
       - '9001:9001'
@@ -11,8 +11,8 @@ services:
     volumes:
       - 'minio_data:/data'
     environment:
-      - MINIO_ROOT_USER=your_username
-      - MINIO_ROOT_PASSWORD=your_pasword
+      - MINIO_ROOT_USER=root
+      - MINIO_ROOT_PASSWORD=password12345678
       - MINIO_DEFAULT_BUCKETS=bucket
 
 networks:
